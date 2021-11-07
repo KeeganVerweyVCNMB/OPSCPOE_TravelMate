@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".login">
+
+    <ImageView
+        android:id="@+id/imgLogin_bgd"
+        android:layout_width="0dp"
+        android:layout_height="731dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/txtLgnPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtLgnPass"
+        app:srcCompat="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLoginToDash"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-medium"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
+
+    <TextView
+        android:id="@+id/tvMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/txtLgnEmail"
+        app:layout_constraintStart_toStartOf="@+id/txtLgnEmail"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarLogin" />
+
+    <TextView
+        android:id="@+id/tvPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:text="Password"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/txtLgnPass"
+        app:layout_constraintStart_toStartOf="@+id/txtLgnPass"
+        app:layout_constraintTop_toBottomOf="@+id/txtLgnEmail" />
+
+    <EditText
+        android:id="@+id/txtLgnEmail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Your email address"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMail" />
+
+    <EditText
+        android:id="@+id/txtLgnPass"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="18dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Your password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvForgotPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPass" />
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Don't have an account? Sign Up"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/tvRequestSOS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginToDash" />
+
+    <TextView
+        android:id="@+id/tvForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="13dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Forgot Password?"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/btnLoginToDash"
+        app:layout_constraintStart_toStartOf="@+id/btnLoginToDash"
+        app:layout_constraintTop_toBottomOf="@+id/txtLgnPass" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLogin"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="38dp"
+        android:indeterminateTint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/tvMail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+    <ImageView
+        android:id="@+id/tmLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tm_logo" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Welcome! Feel free to login"
+        android:textSize="11pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarLogin"
+        app:layout_constraintStart_toStartOf="@+id/tmLogo"
+        app:layout_constraintTop_toBottomOf="@+id/tmLogo" />
+
+    <TextView
+        android:id="@+id/tvRequestSOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Request SOS"
+        android:textColor="@color/red"
+        android:textSize="11pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

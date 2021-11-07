@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "552267382658",
+    "project_id": "opsc-poe-sem2",
+    "storage_bucket": "opsc-poe-sem2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552267382658:android:3cd63550bbb4f1c9f7999b",
+        "android_client_info": {
+          "package_name": "com.travelMate.opscpoe_sem2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552267382658-6r3fjl2si7en717l7qdnbmnqaor6ltp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdcyj-It3-r_Hqkj1O8llyBi33d3qvfvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552267382658-6r3fjl2si7en717l7qdnbmnqaor6ltp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

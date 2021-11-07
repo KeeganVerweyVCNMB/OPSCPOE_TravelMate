@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".userProfile">
+
+    <!--(xml, s., M, P., Arputharaj, V. and Katz, A., 2021. )-->
+
+    <TextView
+        android:id="@+id/tvMyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="43dp"
+        android:text="My Profile"
+        android:textSize="11pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarProfile"
+        app:layout_constraintEnd_toStartOf="@+id/imgProfile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarProfile"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="54dp"
+        android:indeterminateTint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMyProfile" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="7dp"
+        android:text="First Name"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/txtNameProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarProfile" />
+
+    <EditText
+        android:id="@+id/txtNameProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Your first name"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSurname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <EditText
+        android:id="@+id/txtAddressProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Your home address"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirmUpdateProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="8dp"
+        android:text="Address"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/txtAddressProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailProfile" />
+
+    <EditText
+        android:id="@+id/txtEmailProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:editable="false"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Your email address"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="8dp"
+        android:text="Email"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmailProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSurnameProfile" />
+
+    <TextView
+        android:id="@+id/tvSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="7dp"
+        android:text="Last Name"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/txtSurnameProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameProfile" />
+
+    <EditText
+        android:id="@+id/txtSurnameProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Your last name"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/text"
+        android:textColorHint="@color/text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSurname" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfirmUpdateProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-medium"
+        android:paddingRight="10dp"
+        android:text="Update Profile"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddressProfile" />
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="140dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNameProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

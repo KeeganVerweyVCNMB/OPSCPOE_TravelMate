@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgSOSMain"
+        android:layout_width="181dp"
+        android:layout_height="142dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/sos_red" />
+
+    <EditText android:id="@+id/itemSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="150dp"
+        android:hint="Search..."
+        android:inputType="text"/>
+
+    <ListView
+        android:id="@+id/editListView"
+        android:layout_width="wrap_content"
+        android:layout_height="516dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="12dp">
+
+    </ListView>
+
+</RelativeLayout>

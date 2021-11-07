@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".mapSettings">
+
+    <TextView
+        android:id="@+id/tvMySettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="14dp"
+        android:text="My Settings"
+        android:textAlignment="center"
+        android:textSize="14pt"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/tvMapSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUpdateSettings"
+        android:layout_width="320dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-medium"
+        android:paddingRight="10dp"
+        android:text="Update Settings"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrefSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Preferred Landmarks"
+        android:textSize="11pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupTop" />
+
+    <TextView
+        android:id="@+id/tvMapSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:text="Map Settings"
+        android:textSize="11pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMySettings" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupTop"
+        android:layout_width="354dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrefSettings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMapSettings">
+
+        <RadioButton
+            android:id="@+id/rbKM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kilometres"
+            android:buttonTint="@color/green"/>
+
+        <RadioButton
+            android:id="@+id/rbMiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Miles"
+            android:buttonTint="@color/green"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupBottom"
+        android:layout_width="351dp"
+        android:layout_height="245dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="165dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrefSettings">
+
+        <RadioButton
+            android:id="@+id/rbServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car Services"
+            android:buttonTint="@color/green"/>
+
+        <RadioButton
+            android:id="@+id/rbATM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ATM"
+            android:buttonTint="@color/green"/>
+
+        <RadioButton
+            android:id="@+id/rbRestaurants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restaurants"
+            android:buttonTint="@color/green"/>
+
+        <RadioButton
+            android:id="@+id/rbFuel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Petrol Station"
+            android:buttonTint="@color/green"/>
+
+        <RadioButton
+            android:id="@+id/rbCarWash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car Wash"
+            android:buttonTint="@color/green"/>
+    </RadioGroup>
+
+    <ProgressBar
+        android:id="@+id/progressBarSettings"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="6dp"
+        android:indeterminateTint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMySettings" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
