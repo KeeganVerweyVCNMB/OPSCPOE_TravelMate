@@ -55,6 +55,8 @@ public class viewMaps extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     ProgressBar progressBarMap;
     Spinner dropdown;
+    MarkerOptions markerOptions;
+    LatLng latLng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +87,12 @@ public class viewMaps extends AppCompatActivity implements OnMapReadyCallback {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                 String mapNearbySelected = dropdown.getSelectedItem().toString();
 
-                LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-                MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("My Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                if(currentLocation != null) {
+                    latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+                }
+                if(latLng != null) {
+                    markerOptions = new MarkerOptions().position(latLng).title("My Position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                }
 
                 if (mapNearbySelected == "Restaurants") {
 

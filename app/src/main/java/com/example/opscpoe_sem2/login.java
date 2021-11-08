@@ -46,11 +46,6 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) && !locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-            Toast.makeText(getApplicationContext(), "Please enable your devices location.", Toast.LENGTH_LONG).show();
-        }
-
         //Forgot Password navigation
         tvFogotPass = (TextView) findViewById(R.id.tvForgotPassword);
         tvFogotPass.setOnClickListener(new View.OnClickListener() {
@@ -131,8 +126,10 @@ public class login extends AppCompatActivity {
             return;
         }
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        longitude = location.getLongitude();
-        latitude = location.getLatitude();
+        if(location != null) {
+            longitude = location.getLongitude();
+            latitude = location.getLatitude();
+        }
 
         tvSOS = (TextView) findViewById(R.id.tvRequestSOS);
 
