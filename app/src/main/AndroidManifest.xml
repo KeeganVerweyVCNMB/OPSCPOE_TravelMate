@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.opscpoe_sem2">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -7,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -96,6 +98,16 @@
         <activity
             android:name=".goToSavedMap"
             android:parentActivityName=".savedRoutes">
+        </activity>
+
+        <activity
+            android:name=".streetView"
+            android:parentActivityName=".dashboard">
+        </activity>
+
+        <activity
+            android:name=".tracker"
+            android:parentActivityName=".dashboard">
         </activity>
     </application>
 

@@ -88,276 +88,281 @@ public class mapSettings extends AppCompatActivity {
                 if(rbKM.isChecked() || rbMiles.isChecked()){
                     if(rbServices.isChecked() || rbATM.isChecked() || rbRestaurants.isChecked() || rbPetrol.isChecked() || rbCarWash.isChecked())
                     {
-                        if(rbKM.isChecked() && rbServices.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
+                        if(myParentNode != null) {
+                            if (rbKM.isChecked() && rbServices.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
 
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
 
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
 
-                            String settingsID = "SettingID-" + generatedID;
+                                String settingsID = "SettingID-" + generatedID;
 
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
 
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("KM");
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("KM");
 
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("Services");
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("Services");
 
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
 
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbKM.isChecked() && rbATM.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("KM");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("ATM");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbKM.isChecked() && rbRestaurants.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("KM");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("Restaurants");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbKM.isChecked() && rbPetrol.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("KM");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("Petrol");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbKM.isChecked() && rbCarWash.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("KM");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("CarWash");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+
+                            if (rbMiles.isChecked() && rbServices.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("Miles");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("Services");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbMiles.isChecked() && rbATM.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("Miles");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("ATM");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbMiles.isChecked() && rbRestaurants.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("Miles");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("Restaurants");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbMiles.isChecked() && rbPetrol.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("Miles");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("Petrol");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
+                            if (rbMiles.isChecked() && rbCarWash.isChecked()) {
+                                dbRef.child(myParentNode).removeValue();
+
+                                //Generating random number
+                                int max = 1000000;
+                                int min = 0;
+
+                                Random randomNum = new Random();
+                                int generatedID = min + randomNum.nextInt(max);
+
+                                String settingsID = "SettingID-" + generatedID;
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).setValue(settingsID);
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("MapSettings").setValue("Miles");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("PreferredLandmark").setValue("CarWash");
+
+                                dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                                dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                                startActivity(new Intent(mapSettings.this, dashboard.class));
+                                Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                            }
                         }
-                        if(rbKM.isChecked() && rbATM.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("KM");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("ATM");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-                        if(rbKM.isChecked() && rbRestaurants.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("KM");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("Restaurants");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-                        if(rbKM.isChecked() && rbPetrol.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("KM");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("Petrol");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-                        if(rbKM.isChecked() && rbCarWash.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("KM");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("CarWash");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-
-                        if(rbMiles.isChecked() && rbServices.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("Miles");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("Services");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-                        if(rbMiles.isChecked() && rbATM.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("Miles");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("ATM");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-                        if(rbMiles.isChecked() && rbRestaurants.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("Miles");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("Restaurants");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-                        if(rbMiles.isChecked() && rbPetrol.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("Miles");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("Petrol");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
-                        }
-                        if(rbMiles.isChecked() && rbCarWash.isChecked()) {
-                            dbRef.child(myParentNode).removeValue();
-
-                            //Generating random number
-                            int max = 1000000;
-                            int min = 0;
-
-                            Random randomNum = new Random();
-                            int generatedID = min + randomNum.nextInt(max);
-
-                            String settingsID = "SettingID-" + generatedID;
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).setValue(settingsID);
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("MapSettings").setValue("Miles");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("PreferredLandmark").setValue("CarWash");
-
-                            dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
-                            dbRef.child(settingsID).child("Email").setValue(emailLocally);
-
-                            startActivity(new Intent(mapSettings.this, dashboard.class));
-                            Toast.makeText(mapSettings.this, "Settings Successfully Updated", Toast.LENGTH_LONG).show();
+                        else {
+                            Toast.makeText(getApplicationContext(), "View map before updating settings.", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else {
@@ -387,50 +392,87 @@ public class mapSettings extends AppCompatActivity {
                     PrefLandmark[0] = mapStock.get("PreferredLandmark").toString();
                 }
 
-                if(MapSettings[0].equals("KM"))
-                {
-                    rbKM.setChecked(true);
-                    rbMiles.setChecked(false);
-                }
-                else if(MapSettings[0].equals("Miles")){
-                    rbKM.setChecked(false);
-                    rbMiles.setChecked(true);
+                if(myParentNode == null) {
+                    //Generating random number
+                    int max = 1000000;
+                    int min = 0;
+
+                    Random randomNum = new Random();
+                    int generatedID = min + randomNum.nextInt(max);
+
+                    String settingsID = "SettingID-" + generatedID;
+
+                    dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                    dbRef.child(settingsID).setValue(settingsID);
+
+                    dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                    dbRef.child(settingsID).child("MapSettings").setValue("KM");
+
+                    dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                    dbRef.child(settingsID).child("PreferredLandmark").setValue("Services");
+
+                    dbRef = FirebaseDatabase.getInstance().getReference("MySettings");
+                    dbRef.child(settingsID).child("Email").setValue(emailLocally);
+
+                    for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                        myParentNode = dataSnapshot.getKey();
+                    }
                 }
 
-                if(PrefLandmark[0].equals("Services")){
+                if(MapSettings != null && MapSettings.length > 0 && MapSettings[0].length() > 0) {
+                    if(MapSettings[0].equals("KM"))
+                    {
+                        rbKM.setChecked(true);
+                        rbMiles.setChecked(false);
+                    }
+                    else if(MapSettings[0].equals("Miles")){
+                        rbKM.setChecked(false);
+                        rbMiles.setChecked(true);
+                    }
+                }
+                else {
+                    rbKM.setChecked(true);
+                }
+
+                if(PrefLandmark != null && PrefLandmark.length > 0 && PrefLandmark[0].length() > 0) {
+                    if(PrefLandmark[0].equals("Services")){
+                        rbServices.setChecked(true);
+                        rbATM.setChecked(false);
+                        rbRestaurants.setChecked(false);
+                        rbPetrol.setChecked(false);
+                        rbCarWash.setChecked(false);
+                    }
+                    else if(PrefLandmark[0].equals("ATM")) {
+                        rbServices.setChecked(false);
+                        rbATM.setChecked(true);
+                        rbRestaurants.setChecked(false);
+                        rbPetrol.setChecked(false);
+                        rbCarWash.setChecked(false);
+                    }
+                    else if(PrefLandmark[0].equals("Restaurants")) {
+                        rbServices.setChecked(false);
+                        rbATM.setChecked(false);
+                        rbRestaurants.setChecked(true);
+                        rbPetrol.setChecked(false);
+                        rbCarWash.setChecked(false);
+                    }
+                    else if(PrefLandmark[0].equals("Petrol")) {
+                        rbServices.setChecked(false);
+                        rbATM.setChecked(false);
+                        rbRestaurants.setChecked(false);
+                        rbPetrol.setChecked(true);
+                        rbCarWash.setChecked(false);
+                    }
+                    else if(PrefLandmark[0].equals("CarWash")) {
+                        rbServices.setChecked(false);
+                        rbATM.setChecked(false);
+                        rbRestaurants.setChecked(false);
+                        rbPetrol.setChecked(false);
+                        rbCarWash.setChecked(true);
+                    }
+                }
+                else {
                     rbServices.setChecked(true);
-                    rbATM.setChecked(false);
-                    rbRestaurants.setChecked(false);
-                    rbPetrol.setChecked(false);
-                    rbCarWash.setChecked(false);
-                }
-                else if(PrefLandmark[0].equals("ATM")) {
-                    rbServices.setChecked(false);
-                    rbATM.setChecked(true);
-                    rbRestaurants.setChecked(false);
-                    rbPetrol.setChecked(false);
-                    rbCarWash.setChecked(false);
-                }
-                else if(PrefLandmark[0].equals("Restaurants")) {
-                    rbServices.setChecked(false);
-                    rbATM.setChecked(false);
-                    rbRestaurants.setChecked(true);
-                    rbPetrol.setChecked(false);
-                    rbCarWash.setChecked(false);
-                }
-                else if(PrefLandmark[0].equals("Petrol")) {
-                    rbServices.setChecked(false);
-                    rbATM.setChecked(false);
-                    rbRestaurants.setChecked(false);
-                    rbPetrol.setChecked(true);
-                    rbCarWash.setChecked(false);
-                }
-                else if(PrefLandmark[0].equals("CarWash")) {
-                    rbServices.setChecked(false);
-                    rbATM.setChecked(false);
-                    rbRestaurants.setChecked(false);
-                    rbPetrol.setChecked(false);
-                    rbCarWash.setChecked(true);
                 }
 
                 progressBarSettings.setVisibility(RelativeLayout.INVISIBLE);

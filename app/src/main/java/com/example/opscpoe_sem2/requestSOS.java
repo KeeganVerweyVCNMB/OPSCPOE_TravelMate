@@ -53,6 +53,7 @@ public class requestSOS extends AppCompatActivity {
     ImageView imgSOS;
     double longitude;
     double latitude;
+    Location location;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,9 +64,13 @@ public class requestSOS extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        longitude = location.getLongitude();
-        latitude = location.getLatitude();
+        if(lm != null) {
+            location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        }
+        if(location != null) {
+            longitude = location.getLongitude();
+            latitude = location.getLatitude();
+        }
 
         imgSOS = (ImageView) findViewById(R.id.imgSOSMain);
         Animation pulse = AnimationUtils.loadAnimation(this, R.anim.sos_pulse);
@@ -173,8 +178,10 @@ public class requestSOS extends AppCompatActivity {
             }
         });
 
-        myAdapter = new ArrayAdapter<String>(this, R.layout.sos_listsearch, R.id.sos_name, sosTypes);
-        sosListView.setAdapter(myAdapter);
+        if(sosTypes != null && sosTypes.length > 0) {
+            myAdapter = new ArrayAdapter<String>(this, R.layout.sos_listsearch, R.id.sos_name, sosTypes);
+            sosListView.setAdapter(myAdapter);
+        }
 
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override

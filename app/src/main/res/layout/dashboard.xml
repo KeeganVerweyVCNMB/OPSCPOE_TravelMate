@@ -23,11 +23,11 @@
 
         <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="721dp"
+            android:layout_height="910dp"
             android:layout_marginLeft="5dp"
             android:columnCount="2"
             android:columnOrderPreserved="false"
-            android:rowCount="4">
+            android:rowCount="5">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
@@ -256,6 +256,86 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="50sp"
                     android:text="My Profile"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardMaxElevation="5dp">
+
+                <FrameLayout
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue" />
+
+                <LinearLayout
+                    android:id="@+id/btnStreetView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:orientation="vertical" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/streetview" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50sp"
+                    android:text="Street View"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardMaxElevation="5dp">
+
+                <FrameLayout
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue" />
+
+                <LinearLayout
+                    android:id="@+id/btnTracker"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:orientation="vertical" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/trackroute" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50sp"
+                    android:text="Track Route"
                     android:textColor="@color/black"
                     android:textSize="22sp"
                     android:textStyle="bold|italic" />

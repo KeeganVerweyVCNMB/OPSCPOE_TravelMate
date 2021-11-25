@@ -19,7 +19,7 @@ public class dashboard extends AppCompatActivity {
     //Setting Variables
     Button btnSignOut;
     String emailPassed, passPassed;
-    LinearLayout btnViewMaps, btnShareMaps, btnServices, btnProfile, btnRequestSOS, btnMapSettings, btnPlanMap, btnGoSavedRoutes;
+    LinearLayout btnViewMaps, btnShareMaps, btnServices, btnProfile, btnRequestSOS, btnMapSettings, btnPlanMap, btnGoSavedRoutes, btnStreetView, btnTrackMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +123,22 @@ public class dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(dashboard.this, savedRoutes.class));
+            }
+        });
+
+        btnStreetView = findViewById(R.id.btnStreetView);
+        btnStreetView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dashboard.this, streetView.class));
+            }
+        });
+
+        btnTrackMe = findViewById(R.id.btnTracker);
+        btnTrackMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dashboard.this, tracker.class));
             }
         });
     }

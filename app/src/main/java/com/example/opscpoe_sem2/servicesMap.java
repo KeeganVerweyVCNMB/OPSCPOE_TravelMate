@@ -11,6 +11,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -163,6 +164,9 @@ public class servicesMap extends AppCompatActivity implements OnMapReadyCallback
             return;
         }
         mMap.setMyLocationEnabled(true);
+        mMap.setBuildingsEnabled(true);
+        mMap.setIndoorEnabled(true);
+        mMap.setTrafficEnabled(true);
         PlacesSearchResult[] repairSearchResults = new servicesMap.nearbyCarRepair().run().results;
 
         if (repairSearchResults.length > 0) {
@@ -192,6 +196,18 @@ public class servicesMap extends AppCompatActivity implements OnMapReadyCallback
             mMap.addMarker(markerOptions);
         }
 
+    }
+
+    public void ChangeType(View view) {
+        if(mMap.getMapType() == GoogleMap.MAP_TYPE_SATELLITE){
+            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        }
+        else if(mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL){
+            mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        }
+        else if(mMap.getMapType() == GoogleMap.MAP_TYPE_TERRAIN){
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        }
     }
 
     public class nearbyCarRepair {

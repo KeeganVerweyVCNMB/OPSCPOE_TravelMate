@@ -14,7 +14,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_below="@+id/idSearchViewService"
+        android:layout_below="@+id/btnChangeMap"
         tools:context=".servicesMap" />
 
     <ProgressBar
@@ -35,5 +35,22 @@
         android:elevation="5dp"
         app:iconifiedByDefault="false"
         app:queryHint="Search Service Centres" />
+
+    <Button
+        android:id="@+id/btnChangeMap"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toggle Map Type"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="ChangeType"
+        android:layout_below="@+id/idSearchViewService"/>
 
 </RelativeLayout>

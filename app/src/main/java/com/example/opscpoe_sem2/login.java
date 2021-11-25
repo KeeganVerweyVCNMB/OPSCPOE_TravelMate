@@ -11,8 +11,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,10 +38,11 @@ public class login extends AppCompatActivity {
     //Setting Variables
     FirebaseAuth fireBAuth;
     EditText lgnEmail, lgnPassword;
-    ProgressBar progressBarLogin;
+    ProgressBar progressBarLogin, progressBarSOSTimer;
     TextView tvFogotPass, tvRegister, tvSOS;
     double longitude;
     double latitude;
+    CountDownTimer cTimer = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,7 @@ public class login extends AppCompatActivity {
             }
         });
 
+        progressBarSOSTimer = (ProgressBar)findViewById(R.id.progressBarSOSTime);
         progressBarLogin = (ProgressBar)findViewById(R.id.progressBarLogin);
         //stackoverflow.com. 2021. Android progress bar not hiding: Android Tutorial.
         progressBarLogin.setVisibility(RelativeLayout.INVISIBLE);
@@ -110,13 +114,6 @@ public class login extends AppCompatActivity {
                     //stackoverflow.com. 2021. Android progress bar not hiding: Android Tutorial.
                     progressBarLogin.setVisibility(RelativeLayout.VISIBLE);
                     loginUser(email, password);
-
-                    Intent intent = new Intent(login.this, dashboard.class);
-                    Bundle bm = new Bundle();
-                    bm.putString("Email", email);
-                    bm.putString("Password", password);
-                    intent.putExtras(bm);
-                    startActivity(intent);
                 }
             }
         });
@@ -132,23 +129,44 @@ public class login extends AppCompatActivity {
         }
 
         tvSOS = (TextView) findViewById(R.id.tvRequestSOS);
-
-        tvSOS.setOnClickListener(new View.OnClickListener() {
+        tvSOS.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                String uriText =
-                        "mailto:travelMateSOS@gmail.com" +
-                                "?subject=" + Uri.encode("Travel Mate SOS") +
-                                "&body=" + Uri.encode("This is a Travel Mate SOS signal. \n\n Please send out SOS rescue services!\n" +
-                                " http://maps.google.com/maps?saddr=" + latitude + "," + longitude
-                                + "\n\n Thank You! \nTravel Mate User Emergency");
-
-                Uri uri = Uri.parse(uriText);
-                Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
-                sendIntent.setData(uri);
-                startActivity(Intent.createChooser(sendIntent, "Send email"));
+            public boolean onTouch(View v, MotionEvent event) {
+                //when button is pressed
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    startTimer();
+                }
+                else if(event.getAction() == MotionEvent.ACTION_UP) {
+                    progressBarSOSTimer.setProgress(0);
+                    cancelTimer();
+                }
+                return true;
             }
         });
+    }
+
+    void startTimer() {
+        cTimer = new CountDownTimer(2000, 200) {
+            public void onTick(long millisUntilFinished) {
+                progressBarSOSTimer.setProgress(progressBarSOSTimer.getProgress() + 10);
+            }
+            public void onFinish() {
+                String number="066 545 6666";
+
+                Intent intent4=new Intent(Intent.ACTION_CALL);
+                intent4.setData(Uri.parse("tel:"+number));
+                startActivity(intent4);
+
+                progressBarSOSTimer.setProgress(0);
+            }
+        };
+        cTimer.start();
+    }
+
+    //cancel timer
+    void cancelTimer() {
+        if(cTimer!=null)
+            cTimer.cancel();
     }
 
     //Firebase class for signing user into system (Blog.mindorks.com. 2021.)
@@ -159,7 +177,12 @@ public class login extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(login.this, "Logged in as: " + email.toString(), Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(login.this, dashboard.class));
+                        Intent intent = new Intent(login.this, dashboard.class);
+                        Bundle bm = new Bundle();
+                        bm.putString("Email", email);
+                        bm.putString("Password", password);
+                        intent.putExtras(bm);
+                        startActivity(intent);
                     }
                     else {
                         Toast.makeText(login.this, "Username or Password Incorrect", Toast.LENGTH_LONG).show();
