@@ -11,8 +11,8 @@ android {
         applicationId "com.travelMate.opscpoe_sem2"
         minSdkVersion 29
         targetSdkVersion 30
-        versionCode 6
-        versionName "1.6"
+        versionCode 7
+        versionName "2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
